@@ -1,4 +1,4 @@
-name: Deploy to GitHub Page
+name: Publicar cambios staging
 
 on:
   push:
