@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 
-export default function Login({ onIrARegistro }) {
-  const [formData, setFormData] = useState({
-    correo: '',
-    password: ''
-  });
+export default function Login({ onIrARegistro, onLoginSuccess }) {
+  const [formData, setFormData] = useState({ correo: '', password: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,30 +9,14 @@ export default function Login({ onIrARegistro }) {
   };
 
   return (
-    <div style={{
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-      backgroundColor: '#f3f4f6',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      margin: 0
-    }}>
-      <div style={{
-        backgroundColor: '#ffffff',
-        padding: '30px',
-        borderBottom: '4px solid #84cc16',
-        borderRadius: '12px',
-        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-        width: '100%',
-        maxWidth: '400px'
-      }}>
+    <div style={{ fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", backgroundColor: '#f3f4f6', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', margin: 0 }}>
+      <div style={{ backgroundColor: '#ffffff', padding: '30px', borderBottom: '4px solid #84cc16', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', width: '100%', maxWidth: '400px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div style={{ backgroundColor: '#bfff00', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '18px', height: '10px', position: 'relative' }}>
               <div style={{ width: '14px', height: '2px', backgroundColor: '#111827', position: 'absolute' }}></div>
-              <div style={{ content: "''", width: '3px', height: '10px', backgroundColor: '#111827', borderRadius: '1px', position: 'absolute', left: 0 }}></div>
-              <div style={{ content: "''", width: '3px', height: '10px', backgroundColor: '#111827', borderRadius: '1px', position: 'absolute', right: 0 }}></div>
+              <div style={{ width: '3px', height: '10px', backgroundColor: '#111827', borderRadius: '1px', position: 'absolute', left: 0 }}></div>
+              <div style={{ width: '3px', height: '10px', backgroundColor: '#111827', borderRadius: '1px', position: 'absolute', right: 0 }}></div>
             </div>
           </div>
           <span style={{ fontSize: '24px', fontWeight: '750', color: '#111827', letterSpacing: '-0.5px' }}>GymFlow</span>
@@ -56,7 +37,7 @@ export default function Login({ onIrARegistro }) {
             <input type="password" name="password" placeholder="Tu contraseña" value={formData.password} onChange={handleChange} style={{ width: '100%', padding: '10px', border: '1px solid #d1d5db', borderRadius: '8px', boxSizing: 'border-box', fontSize: '14px' }} />
           </div>
 
-          <button type="button" style={{ width: '100%', padding: '12px', backgroundColor: '#111827', color: '#ffffff', border: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '15px', cursor: 'pointer' }}>
+          <button type="button" onClick={onLoginSuccess} style={{ width: '100%', padding: '12px', backgroundColor: '#111827', color: '#ffffff', border: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '15px', cursor: 'pointer' }}>
             Iniciar sesión
           </button>
         </form>
