@@ -31,7 +31,7 @@ export default function Login({ onIrARegistro }) {
         maxWidth: '400px'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div style={{ backgroundColor: '#bfff00', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justify: 'center' }}>
+          <div style={{ backgroundColor: '#bfff00', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '18px', height: '10px', position: 'relative' }}>
               <div style={{ width: '14px', height: '2px', backgroundColor: '#111827', position: 'absolute' }}></div>
               <div style={{ content: "''", width: '3px', height: '10px', backgroundColor: '#111827', borderRadius: '1px', position: 'absolute', left: 0 }}></div>
@@ -51,24 +51,13 @@ export default function Login({ onIrARegistro }) {
             <input type="email" name="correo" placeholder="tu@correo.com" value={formData.correo} onChange={handleChange} style={{ width: '100%', padding: '10px', border: '1px solid #d1d5db', borderRadius: '8px', boxSizing: 'border-box', fontSize: '14px' }} />
           </div>
 
-          <div style={{ marginBottom: '5px' }}>
+          <div style={{ marginBottom: '20px' }}>
             <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', marginBottom: '6px', color: '#374151' }}>Contraseña</label>
             <input type="password" name="password" placeholder="Tu contraseña" value={formData.password} onChange={handleChange} style={{ width: '100%', padding: '10px', border: '1px solid #d1d5db', borderRadius: '8px', boxSizing: 'border-box', fontSize: '14px' }} />
           </div>
 
-          <div style={{ textItems: 'right', textAlign: 'right', marginTop: '5px', marginBottom: '20px' }}>
-            <span style={{ fontSize: '13px', textDecoration: 'underline', cursor: 'pointer', color: '#111827', fontWeight: '600' }}>¿Olvidaste tu contraseña?</span>
-          </div>
-
           <button type="button" style={{ width: '100%', padding: '12px', backgroundColor: '#111827', color: '#ffffff', border: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '15px', cursor: 'pointer' }}>
             Iniciar sesión
-          </button>
-          
-          <div style={{ display: 'flex', alignItems: 'center', textAlign: 'center', margin: '20px 0', color: '#9ca3af' }}>o</div>
-
-          <button type="button" style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', color: '#111827', border: '1px solid #d1d5db', borderRadius: '8px', fontWeight: 'bold', fontSize: '14px', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
-            <span style={{ width: '8px', height: '8px', backgroundColor: '#ef4444', borderRadius: '50%', display: 'inline-block' }}></span>
-            Continuar con Google
           </button>
         </form>
 
